@@ -22,8 +22,9 @@ namespace CarLotSimulator
             
             
             Car toyota = new Car();
-            lot.CarList.Add(toyota);
+            lot.Cars.Add(toyota);
             
+           
             toyota.Year = 2020;
             toyota.Make = "Camry";
             toyota.Model = "LE";
@@ -37,7 +38,7 @@ namespace CarLotSimulator
 
 
             Car honda = new Car() { Year = 2014, Make = "Civic", Model = "Coupe", EngineNoise = "Vroom", HonkNoise = "Boop Boop"};
-            lot.CarList.Add(honda);
+            lot.Cars.Add(honda);
             
             honda.MakeEngineNoise(honda.EngineNoise);
             honda.MakeHonkNoise(honda.HonkNoise);
@@ -45,16 +46,16 @@ namespace CarLotSimulator
 
 
             Car acura = new Car(2002, "TL", "Type-S", "Dash", "Pow Pow", true);
-            lot.CarList.Add(acura);
+            lot.Cars.Add(acura);
            
             acura.MakeEngineNoise(acura.EngineNoise);
             acura.MakeHonkNoise(acura.HonkNoise);
 
-            Console.WriteLine("--------------");
+            Console.WriteLine($"Number of cars created: {CarLot.numberOfCars}");
 
-            foreach(var car in lot.CarList)
+            foreach(var car in lot.Cars)
             {
-                Console.WriteLine();
+               
                 Console.WriteLine($"Year: {car.Year}, Make: {car.Make}, Model: {car.Model}");
                 
             }
